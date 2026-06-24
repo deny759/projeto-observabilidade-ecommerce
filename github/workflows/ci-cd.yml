@@ -1,0 +1,55 @@
+name: CI/CD Pipeline - E-commerce Observability
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  continuous-integration:
+    name: CI - Testes e Qualidade
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar Código do Repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar Node.js v20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+        cache-dependency-path: app/package.json
+
+    - name: Instalar Dependências da API
+      run: |
+        cd app
+        npm install
+
+    - name: Executar Testes de Validação (Smoke Test)
+      run: |
+        cd app
+        npm test
+
+  continuous-delivery:
+    name: CD - Simulação de Deploy
+    needs: continuous-integration
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+    - name: Baixar Código do Repositório
+      uses: actions/checkout@v4
+
+    - name: Simulando Empacotamento de Artefatos
+      run: |
+        echo "Empacotando a aplicação Node.js para produção..."
+        mkdir -id dist
+        cp -r app/* dist/
+        echo "Artefato de build gerado na pasta /dist com sucesso."
+
+    - name: Deploy Simulado
+      run: |
+        echo "Conectando ao servidor de produção local..."
+        echo "Deploy concluído com sucesso na branch main!"

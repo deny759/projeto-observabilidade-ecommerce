@@ -1,0 +1,93 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./app
+    container_name: node_app
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET=super_secret_key_123
+      - PORT=3000
+    volumes:
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - net_observability
+    depends_on:
+      - prometheus
+      - loki
+
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - "9090:9090"
+    networks:
+      - net_observability
+
+  node-exporter:
+    image: prom/node-exporter:v1.6.0
+    container_name: node_exporter
+    ports:
+      - "9100:9100"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    networks:
+      - net_observability
+
+  loki:
+    image: grafana/loki:2.8.2
+    container_name: loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki/loki-config.yml:/etc/loki/local-config.yaml
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - net_observability
+
+  promtail:
+    image: grafana/promtail:2.8.2
+    container_name: promtail
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - ./promtail/promtail-config.yml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
+    user: root # Garante leitura dos logs do Docker do host
+    networks:
+      - net_observability
+
+  grafana:
+    image: grafana/grafana:10.0.3
+    container_name: grafana
+    ports:
+      - "3200:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - net_observability
+
+networks:
+  net_observability:
+    driver: bridge

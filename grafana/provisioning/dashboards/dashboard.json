@@ -1,0 +1,178 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 1,
+    "id": 1,
+    "links": [],
+    "liveNow": true,
+    "panels": [
+      {
+        "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+        "id": 10,
+        "title": "🟦 BLOCO 1 - INFRAESTRUTURA",
+        "type": "row"
+      },
+      {
+        "datasource": { "type": "prometheus", "uid": "Prometheus" },
+        "fieldConfig": {
+          "defaults": {
+            "custom": { "drawStyle": "line", "lineInterpolation": "smooth" },
+            "unit": "percent"
+          }
+        },
+        "gridPos": { "h": 6, "w": 8, "x": 0, "y": 1 },
+        "id": 11,
+        "targets": [
+          {
+            "expr": "100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[1m])) * 100)",
+            "legendFormat": "Uso de CPU Host"
+          }
+        ],
+        "title": "Uso de CPU",
+        "type": "timeseries"
+      },
+      {
+        "datasource": { "type": "prometheus", "uid": "Prometheus" },
+        "fieldConfig": {
+          "defaults": { "unit": "percent" }
+        },
+        "gridPos": { "h": 6, "w": 8, "x": 8, "y": 1 },
+        "id": 12,
+        "targets": [
+          {
+            "expr": "100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))",
+            "legendFormat": "Memória Consumida"
+          }
+        ],
+        "title": "Uso de Memória",
+        "type": "timeseries"
+      },
+      {
+        "datasource": { "type": "prometheus", "uid": "Prometheus" },
+        "fieldConfig": {
+          "defaults": { "unit": "Bps" }
+        },
+        "gridPos": { "h": 6, "w": 8, "x": 16, "y": 1 },
+        "id": 13,
+        "targets": [
+          {
+            "expr": "rate(node_network_receive_bytes_total[1m])",
+            "legendFormat": "Download"
+          },
+          {
+            "expr": "rate(node_network_transmit_bytes_total[1m])",
+            "legendFormat": "Upload"
+          }
+        ],
+        "title": "Tráfego de Rede",
+        "type": "timeseries"
+      },
+      {
+        "gridPos": { "h": 1, "w": 24, "x": 0, "y": 7 },
+        "id": 20,
+        "title": "🟩 BLOCO 2 - APLICAÇÃO",
+        "type": "row"
+      },
+      {
+        "datasource": { "type": "prometheus", "uid": "Prometheus" },
+        "gridPos": { "h": 6, "w": 8, "x": 0, "y": 8 },
+        "id": 21,
+        "targets": [
+          {
+            "expr": "sum(rate(http_requests_total[1m]))",
+            "legendFormat": "Reqs/Seg"
+          }
+        ],
+        "title": "Volume de Requisições / Taxa",
+        "type": "timeseries"
+      },
+      {
+        "datasource": { "type": "prometheus", "uid": "Prometheus" },
+        "fieldConfig": {
+          "defaults": { "unit": "percent" }
+        },
+        "gridPos": { "h": 6, "w": 8, "x": 8, "y": 8 },
+        "id": 22,
+        "targets": [
+          {
+            "expr": "(sum(rate(http_requests_total{status=~\"5..\"}[1m])) or vector(0)) / sum(rate(http_requests_total[1m])) * 100",
+            "legendFormat": "Taxa de Erro HTTP 5XX"
+          }
+        ],
+        "title": "Taxa de Erro (%)",
+        "type": "timeseries"
+      },
+      {
+        "datasource": { "type": "loki", "uid": "Loki" },
+        "gridPos": { "h": 6, "w": 8, "x": 16, "y": 8 },
+        "id": 23,
+        "targets": [
+          {
+            "expr": "{job=\"container-logs\"} |= \"\""
+          }
+        ],
+        "title": "Logs em Tempo Real (Loki) [cite: 5]",
+        "type": "logs"
+      },
+      {
+        "gridPos": { "h": 1, "w": 24, "x": 0, "y": 14 },
+        "id": 30,
+        "title": "🟥 BLOCO 3 - INCIDENTES & CORRELAÇÃO [cite: 6]",
+        "type": "row"
+      },
+      {
+        "datasource": { "type": "prometheus", "uid": "Prometheus" },
+        "gridPos": { "h": 6, "w": 12, "x": 0, "y": 15 },
+        "id": 31,
+        "targets": [
+          {
+            "expr": "sum(increase(http_requests_total{status=~\"5..\"}[1m]))",
+            "legendFormat": "Erros / Minuto"
+          }
+        ],
+        "title": "Número de Erros por Minuto / Picos de Falha",
+        "type": "timeseries"
+      },
+      {
+        "datasource": { "type": "prometheus", "uid": "Prometheus" },
+        "gridPos": { "h": 6, "w": 12, "x": 12, "y": 15 },
+        "id": 32,
+        "targets": [
+          {
+            "expr": "100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[1m])) * 100)",
+            "legendFormat": "Uso CPU (%)"
+          },
+          {
+            "expr": "sum(rate(http_requests_total{status=~\"5..\"}[1m])) * 100",
+            "legendFormat": "Erros (Escalados x100)"
+          }
+        ],
+        "title": "Correlação Dinâmica: CPU vs Erros [cite: 6]",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": ["SRE", "Gerencia-de-Redes"],
+    "time": { "from": "now-15m", "to": "now" },
+    "timepicker": { "refresh_intervals": ["5s", "10s", "30s"] },
+    "timezone": "browser",
+    "title": "Dashboard de Observabilidade SRE",
+    "version": 1
+  }
