@@ -9,4 +9,4 @@ datasources:
   - name: Loki
     type: loki
     access: proxy
-    url: http://loki:3100
+    url: http://172.17.0.1:3100
