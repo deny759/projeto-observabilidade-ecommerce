@@ -1,0 +1,73 @@
+{"timestamp":"2026-06-24T07:49:44.755Z","level":"INFO","message":"Aplicação Node em execução na porta 3001"}
+{"timestamp":"2026-06-24T07:49:44.760Z","level":"INFO","message":"Conectado ao banco de dados SQLite com sucesso."}
+{"timestamp":"2026-06-24T07:52:43.282Z","level":"INFO","message":"Aplicação Node em execução na porta 3001"}
+{"timestamp":"2026-06-24T07:52:43.286Z","level":"INFO","message":"Conectado ao banco de dados SQLite com sucesso."}
+{"timestamp":"2026-06-24T07:59:17.433Z","level":"INFO","message":"Incidente Ativado: Injetando delay artificial de 6000ms."}
+{"timestamp":"2026-06-24T07:59:23.451Z","level":"INFO","message":"Requisição processada: GET /incidente/timeout","status":200,"durationSeconds":6.018,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T07:59:57.714Z","level":"INFO","message":"Incidente Ativado: Injetando delay artificial de 6000ms."}
+{"timestamp":"2026-06-24T08:00:03.725Z","level":"INFO","message":"Requisição processada: GET /incidente/timeout","status":200,"durationSeconds":6.011,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:00:12.400Z","level":"INFO","message":"Incidente Ativado: Injetando delay artificial de 6000ms."}
+{"timestamp":"2026-06-24T08:00:18.410Z","level":"INFO","message":"Requisição processada: GET /incidente/timeout","status":200,"durationSeconds":6.01,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:09:40.625Z","level":"INFO","message":"Incidente Ativado: Injetando delay artificial de 6000ms."}
+{"timestamp":"2026-06-24T08:09:46.642Z","level":"INFO","message":"Requisição processada: GET /incidente/timeout","status":200,"durationSeconds":6.016,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:14:31.463Z","level":"INFO","message":"Incidente Ativado: Iniciando rotina intensa de stress de CPU."}
+{"timestamp":"2026-06-24T08:14:36.463Z","level":"INFO","message":"Requisição processada: GET /incidente/stress-cpu","status":200,"durationSeconds":5,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.605Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.606Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.641Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.643Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.002,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.697Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.698Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.734Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.736Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.002,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.777Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.778Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.816Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.818Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.002,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.855Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.856Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.883Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.884Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.923Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.924Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:12.962Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:23:12.963Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:23:54.294Z","level":"INFO","message":"Incidente Ativado: Iniciando rotina intensa de stress de CPU."}
+{"timestamp":"2026-06-24T08:23:59.297Z","level":"INFO","message":"Requisição processada: GET /incidente/stress-cpu","status":200,"durationSeconds":5.003,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.343Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.345Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.002,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.378Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.379Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.406Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.408Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.432Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.434Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.002,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.473Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.474Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.517Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.518Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.549Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.550Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.592Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.593Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.631Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.633Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.002,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T08:24:02.671Z","level":"ERROR","message":"Incidente Ativado: Falha crítica interna simulada via endpoint"}
+{"timestamp":"2026-06-24T08:24:02.672Z","level":"ERROR","message":"Requisição processada: GET /incidente/erro500","status":500,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:07:37.770Z","level":"INFO","message":"Incidente Ativado: Iniciando rotina intensa de stress de CPU."}
+{"timestamp":"2026-06-24T09:07:42.771Z","level":"INFO","message":"Requisição processada: GET /incidente/stress-cpu","status":200,"durationSeconds":5.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:10:05.119Z","level":"INFO","message":"Incidente Ativado: Injetando delay artificial de 6000ms."}
+{"timestamp":"2026-06-24T09:10:11.134Z","level":"INFO","message":"Requisição processada: GET /incidente/timeout","status":200,"durationSeconds":6.015,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:16:42.262Z","level":"INFO","message":"Incidente Ativado: Injetando delay artificial de 6000ms."}
+{"timestamp":"2026-06-24T09:16:48.272Z","level":"INFO","message":"Requisição processada: GET /incidente/timeout","status":200,"durationSeconds":6.01,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:16:50.620Z","level":"INFO","message":"Incidente Ativado: Iniciando rotina intensa de stress de CPU."}
+{"timestamp":"2026-06-24T09:16:55.621Z","level":"INFO","message":"Requisição processada: GET /incidente/stress-cpu","status":200,"durationSeconds":5.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:54:27.599Z","level":"ERROR","message":"Requisição processada: POST /cart/add","status":404,"durationSeconds":0.004,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:55:05.379Z","level":"INFO","message":"Aplicação Node em execução na porta 3001"}
+{"timestamp":"2026-06-24T09:55:05.384Z","level":"INFO","message":"Conectado ao banco de dados SQLite com sucesso."}
+{"timestamp":"2026-06-24T09:55:15.395Z","level":"ERROR","message":"Requisição processada: POST /cart/add","status":400,"durationSeconds":0.006,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:55:56.643Z","level":"INFO","message":"Checkout aprovado e venda registrada.","valor":2500,"itens":1}
+{"timestamp":"2026-06-24T09:55:56.645Z","level":"INFO","message":"Requisição processada: POST /checkout","status":200,"durationSeconds":0.001,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:56:06.932Z","level":"ERROR","message":"Gateway de pagamento caiu durante o checkout (falha simulada).","valor":999,"itens":3,"motivo":"valor_exato_999","gateway":{"nome":"payment-gateway-simulado","status":"DOWN"}}
+{"timestamp":"2026-06-24T09:56:06.941Z","level":"ERROR","message":"Requisição processada: POST /checkout","status":402,"durationSeconds":0.01,"ip":"::ffff:127.0.0.1"}
+{"timestamp":"2026-06-24T09:56:17.145Z","level":"ERROR","message":"Requisição processada: GET /favicon.ico","status":404,"durationSeconds":0.004,"ip":"::1"}
